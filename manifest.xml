@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE canvashack SYSTEM "../../canvashack.dtd">
+<canvashack>
+	<title>Lock Notifications</title>
+	<id>lock-notifications</id>
+	<authors>
+		<author>
+			<name>Seth Battis</name>
+			<email>SethBattis@stmarksschool.org</email>
+		</author>
+	</authors>
+	<abstract>Lock specific notification settings to (to their current state)</abstract>
+	<components>
+		<javascript file="lock-notifications.js.php"/>
+		<css file="lock-notifications.css"/>
+		<canvas>
+			<pages>
+				<include>
+					<page type="regex" pattern="%/profile/communication%"/>
+				</include>
+			</pages>
+			<dom>
+				<node event="load" action="lockNotifications()" selector="#notification-preferences"/>
+			</dom>
+		</canvas>
+	</components>
+	<config>
+		<option name="notification-list" type="array"/>
+	</config>
+</canvashack>
