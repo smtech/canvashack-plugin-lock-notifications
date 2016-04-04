@@ -3,6 +3,7 @@
 <canvashack>
 	<title>Lock Notifications</title>
 	<id>lock-notifications</id>
+	<name>Lock Notifications</name>
 	<authors>
 		<author>
 			<name>Seth Battis</name>
