@@ -1,9 +1,8 @@
 <?xml version="1.0"?>
 <!DOCTYPE canvashack SYSTEM "../../canvashack.dtd">
 <canvashack>
-	<title>Lock Notifications</title>
-	<id>lock-notifications</id>
 	<name>Lock Notifications</name>
+	<id>lock-notifications</id>
 	<authors>
 		<author>
 			<name>Seth Battis</name>
@@ -12,16 +11,23 @@
 	</authors>
 	<abstract>Lock specific notification settings to (to their current state)</abstract>
 	<components>
-		<javascript file="lock-notifications.js.php"/>
-		<css file="lock-notifications.css"/>
+		<javascript>lock-notifications.js.php</javascript>
+		<css>lock-notifications.css</css>
 		<canvas>
 			<pages>
 				<include>
-					<page type="regex" pattern="%/profile/communication%"/>
+					<page>
+						<type>regex</type>
+						<pattern>%/profile/communication%</pattern>
+					</page>
 				</include>
 			</pages>
 			<dom>
-				<node event="load" action="lockNotifications()" selector="#notification-preferences"/>
+				<bundle>
+					<event>load</event>
+					<action>lockNotifications()</action>
+					<selector>#notification-preferences .comm-event-option</selector>
+				</bundle>
 			</dom>
 		</canvas>
 	</components>
